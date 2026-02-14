@@ -9,6 +9,8 @@ int main()
     char nome_cidade[50], nome_cidade2[50];
     int populacao, populacao2, nu_pontos_turisticos, nu_pontos_turisticos2;
     float area, area2, pib, pib2;
+    float densidade_populacional, densidade_populacional2;
+    float pib_per_capita, pib_per_capita2;
 
     printf("\n\nOlá! Bem-vindo ao Super Trunfo!\n\n"); // Textinho para iniciar o jogo
 
@@ -58,6 +60,11 @@ int main()
     printf("Quantos Pontos Turisticos?\n");
     scanf("%d", &nu_pontos_turisticos2);
 
+    densidade_populacional = populacao / area,
+    densidade_populacional2 = populacao2 / area2;
+    pib_per_capita = (float)(pib * 1000000000.0) / populacao;
+    pib_per_capita2 = (float)(pib2 * 1000000000.0) / populacao2;
+
     // EXIBIÇÃO
     printf("\n--- CARTA 1 ---\n"); //
     printf("Estado: %c\n", estado);
@@ -67,6 +74,8 @@ int main()
     printf("Área: %.2f M²\n", area);
     printf("PIB: %.2f Bilhões de Reais\n", pib);
     printf("Número de Pontos Turísticos: %d\n", nu_pontos_turisticos);
+    printf("A densidade populacional de sua cidade é: %.2f hab/km²\n", densidade_populacional);
+    printf("PIB Per Capita: %.2f reais\n", pib_per_capita);
 
     printf("\n--- CARTA 2 ---\n");
     printf("Estado: %c\n", estado2);
@@ -76,6 +85,8 @@ int main()
     printf("Área: %.2f M²\n", area2);
     printf("PIB: %.2f Bilhões de Reais\n", pib2);
     printf("Número de Pontos Turísticos: %d\n", nu_pontos_turisticos2);
+    printf("A densidade populacional da sua cidade é: %.2f hab/km²\n", densidade_populacional2);
+    printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
 
     return 0;
 }
