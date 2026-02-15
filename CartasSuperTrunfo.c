@@ -92,20 +92,8 @@ int main()
     printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
 
 
-    printf("\n***COMPARANDO ATRIBUTO: POPULAÇAO ***\n");
 
-    if (populacao > populacao2){
-       printf("Resultado: Carta 1 (%s) venceu\n", nome_cidade);
-    } else if (populacao < populacao2){
-            printf("Resultado: Carta 2 (%s) venceu\n", nome_cidade2);
-    } else{
-        printf("Resultado: Empate!\n");
-    }
-    return 0; 
-} 
-
-
-    /*int resultado_populacao = (populacao > populacao2) ? 1 : 2;
+    int resultado_populacao = (populacao > populacao2) ? 1 : 2;
     int resultado_area = (area > area2) ? 1 : 2;
     int resultado_pib = (pib > pib2) ? 1 : 2;
     int resultado_nu_pon_tur = (nu_pontos_turisticos > nu_pontos_turisticos2) ? 1 : 2;
@@ -154,4 +142,4 @@ int main()
     printf("Vencedor: Carta %d\n", resultado_super_poder);
 
     return 0;
-}*/
+}
