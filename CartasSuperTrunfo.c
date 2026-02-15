@@ -61,8 +61,8 @@ int main()
     printf("Quantos Pontos Turisticos?\n");
     scanf("%u", &nu_pontos_turisticos2);
 
-    densidade_populacional = populacao / area;
-    densidade_populacional2 = populacao2 / area2;
+    densidade_populacional = (float)populacao / area;
+    densidade_populacional2 = (float)populacao2 / area2;
     pib_per_capita = (float)(pib * 1000000000.0) / populacao;// multiplquei o PIB por 1b pois como eu estou pedindo para o usuario informar o valor em B, quando divido esse valor pela pulação, da um valo extremamente baixo, multiplicando por 1B eu deuxo o valor real.
     pib_per_capita2 = (float)(pib2 * 1000000000.0) / populacao2;
     super_poder = (float)populacao + area + pib + pib_per_capita + (1.0 / densidade_populacional) + nu_pontos_turisticos;
@@ -92,7 +92,20 @@ int main()
     printf("PIB per Capita: %.2f reais\n", pib_per_capita2);
 
 
-    int resultado_populacao = (populacao > populacao2) ? 1 : 2;
+    printf("\n***COMPARANDO ATRIBUTO: POPULAÇAO ***\n");
+
+    if (populacao > populacao2){
+       printf("Resultado: Carta 1 (%s) venceu\n", nome_cidade);
+    } else if (populacao < populacao2){
+            printf("Resultado: Carta 2 (%s) venceu\n", nome_cidade2);
+    } else{
+        printf("Resultado: Empate!\n");
+    }
+    return 0; 
+} 
+
+
+    /*int resultado_populacao = (populacao > populacao2) ? 1 : 2;
     int resultado_area = (area > area2) ? 1 : 2;
     int resultado_pib = (pib > pib2) ? 1 : 2;
     int resultado_nu_pon_tur = (nu_pontos_turisticos > nu_pontos_turisticos2) ? 1 : 2;
@@ -141,4 +154,4 @@ int main()
     printf("Vencedor: Carta %d\n", resultado_super_poder);
 
     return 0;
-}
+}*/
