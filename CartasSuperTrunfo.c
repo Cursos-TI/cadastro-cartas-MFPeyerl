@@ -62,7 +62,7 @@ int main()
 
     densidade_populacional = populacao / area,
     densidade_populacional2 = populacao2 / area2;
-    pib_per_capita = (float)(pib * 1000000000.0) / populacao;
+    pib_per_capita = (float)(pib * 1000000000.0) / populacao;// multiplquei o PIB por 1b pois como eu estou pedindo para o usuario informar o valor em B, quando divido esse valor pela pulação, da um valo extremamente baixo, multiplicando por 1B eu deuxo o valor real.
     pib_per_capita2 = (float)(pib2 * 1000000000.0) / populacao2;
 
     // EXIBIÇÃO
