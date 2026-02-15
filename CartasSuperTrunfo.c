@@ -11,6 +11,7 @@ int main()
     float area, area2;
     float densidade_populacional, densidade_populacional2;
     float pib, pib2, pib_per_capita, pib_per_capita2;
+    float super_poder, super_poder2;
 
     printf("\n\nOlá! Bem-vindo ao Super Trunfo!\n\n"); // Textinho para iniciar o jogo
 
@@ -64,6 +65,8 @@ int main()
     densidade_populacional2 = populacao2 / area2;
     pib_per_capita = (float)(pib * 1000000000.0) / populacao;// multiplquei o PIB por 1b pois como eu estou pedindo para o usuario informar o valor em B, quando divido esse valor pela pulação, da um valo extremamente baixo, multiplicando por 1B eu deuxo o valor real.
     pib_per_capita2 = (float)(pib2 * 1000000000.0) / populacao2;
+    super_poder = (float)populacao + area + pib + pib_per_capita + (1.0 / densidade_populacional) + nu_pontos_turisticos;
+    super_poder2 = (float)populacao2 + area2 + pib2 + pib_per_capita2 + (1.0 / densidade_populacional2) + nu_pontos_turisticos2;
 
     // EXIBIÇÃO
     printf("\n--- CARTA 1 ---\n"); //
@@ -95,16 +98,18 @@ int main()
     int resultado_nu_pon_tur = (nu_pontos_turisticos > nu_pontos_turisticos2) ? 1 : 2;
     int resultado_densidade = (densidade_populacional < densidade_populacional2) ? 1 : 2;
     int resultado_pib_per_capita = (pib_per_capita > pib_per_capita2) ? 1 : 2;
+    int resultado_super_poder = (super_poder > super_poder2) ? 1 : 2;
 
 
 
     printf("\n***RESULTADO DO DUELO***\n");
-    printf("População: Carta %d venceu\n", (populacao > populacao2) ? 1 : 2);
+    printf("População: Carta %d venceu\n", (populacao > populacao2) ? 1 : 2);// No video o professor fala que "Se der 1, ganhou a carta1, se der 0, ganhoi a carta2", fui essar um pouco sobre como poderia mostrar "carta 1" e "carta 2" e aprendi sobre "? 1 : 2"
     printf("Area: Carta %d venceu\n", (area > area2) ? 1 : 2);
     printf("PIB: Carta %d venceu\n", (pib > pib2) ? 1 : 2);
     printf("Ponto Turisticos: Carta %d venceu\n", (nu_pontos_turisticos > nu_pontos_turisticos2) ? 1 : 2);
     printf("Densidade: Carta %d venceu\n", (densidade_populacional < densidade_populacional2) ? 1 : 2); 
     printf("PIB Per Capita: Carta %d venceu\n", (pib_per_capita > pib_per_capita2) ? 1 : 2);
+    printf("Super Poder: Carta %d venceu\n", (super_poder > super_poder2) ? 1 : 2);
 
     
     printf("\n--- POPULAÇÃO ---\n");
@@ -130,6 +135,10 @@ int main()
     printf("\n--- PIB PER CAPITA ---\n");
     printf("Carta 1: %.2f | Carta 2: %.2f\n", pib_per_capita, pib_per_capita2); 
     printf("Vencedor: Carta %d\n", resultado_pib_per_capita);
+
+    printf("\n--- SUPER PODER ---\n");
+    printf("Carta 1: %.2f | Carta 2: %.2f\n", super_poder, super_poder2); 
+    printf("Vencedor: Carta %d\n", resultado_super_poder);
 
     return 0;
 }
